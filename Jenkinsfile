@@ -3,11 +3,9 @@ pipeline {
 
     stages {
 
-        stage('Build Docker Image') {
+        stage('Build Image') {
             steps {
-                script {
-                    docker.build("ml-model")
-                }
+                sh 'docker build -t ml-model .'
             }
         }
 
